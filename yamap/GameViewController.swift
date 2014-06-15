@@ -29,16 +29,18 @@ class GameViewController: UIViewController {
             nekoImg.image = UIImage(named:"octo.png")
             nekoImg.userInteractionEnabled = true
             
-            let tapBtnGesture = UITapGestureRecognizer(target:self,action:"tapAction")
-            nekoImg.addGestureRecognizer(tapBtnGesture)
+            nekoImg.tag = 100;
+            
+            var gesture:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target:self,action:"swipeAction:")
+            nekoImg.addGestureRecognizer(gesture)
 
         self.view!.addSubview(nekoImg)
         }
         
     }
 
-    func tapAction(){
-        println("test")
+    func swipeAction(gesture :UISwipeGestureRecognizer){
+        println(gesture.view.tag)
     }
     
     override func didReceiveMemoryWarning() {
