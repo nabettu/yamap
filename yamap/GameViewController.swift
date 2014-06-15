@@ -25,22 +25,23 @@ class GameViewController: UIViewController {
         for i in 1...5 {
         let nekoImg:UIImageView = UIImageView();
             y = y + 70
-        nekoImg.frame = CGRectMake(140,y,70,60);
+            nekoImg.frame = CGRectMake(140,y,70,60);
             nekoImg.image = UIImage(named:"octo.png")
             nekoImg.userInteractionEnabled = true
             
-            nekoImg.tag = 100;
+            nekoImg.tag = i;
             
             var gesture:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target:self,action:"swipeAction:")
             nekoImg.addGestureRecognizer(gesture)
 
-        self.view!.addSubview(nekoImg)
+            self.view!.addSubview(nekoImg)
         }
         
     }
 
     func swipeAction(gesture :UISwipeGestureRecognizer){
         println(gesture.view.tag)
+        
     }
     
     override func didReceiveMemoryWarning() {
