@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        
+        
+        let topViewCtr: TopViewController = TopViewController(nibName:nil, bundle:nil)
+        
+        let naviCtr: UINavigationController = UINavigationController(rootViewController:topViewCtr)
+        
+        self.window!.rootViewController = naviCtr
         return true
     }
 
