@@ -9,6 +9,8 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    var startPoint:CGPoint = CGPointZero
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -40,7 +42,11 @@ class GameViewController: UIViewController {
     }
 
     func swipeAction(gesture :UISwipeGestureRecognizer){
-        println(gesture.view.tag)
+        println(gesture.locationInView(self.view))
+        
+        if(gesture.state == UIGestureRecognizerState.Began){
+            startPoint = gesture.locationInView(self.view)
+        }
         
     }
     
