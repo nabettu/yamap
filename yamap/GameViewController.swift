@@ -26,12 +26,21 @@ class GameViewController: UIViewController {
         let nekoImg:UIImageView = UIImageView();
             y = y + 70
         nekoImg.frame = CGRectMake(140,y,70,60);
-        nekoImg.image = UIImage(named:"octo.png")
+            nekoImg.image = UIImage(named:"octo.png")
+            nekoImg.userInteractionEnabled = true
+            
+            let tapBtnGesture = UITapGestureRecognizer(target:self,action:"tapAction")
+            nekoImg.addGestureRecognizer(tapBtnGesture)
+
         self.view!.addSubview(nekoImg)
         }
         
     }
 
+    func tapAction(){
+        println("test")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
